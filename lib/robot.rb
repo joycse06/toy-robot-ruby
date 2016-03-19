@@ -12,15 +12,26 @@ class Robot
   end
 
   def place( x, y, face )
-
+    x = (x.to_i)
+    y = (y.to_i)
+    face = face.upcase
+    if ( validate( x, y, face ) )
+      @xPos, @yPos, @face = x, y, face
+    end
   end
 
   def report
-
+    "#{@xPos},#{@yPos},#{@face.to_s}" if placed?
   end
 
   def placed?
-    @face.nil?
+    ! @face.nil?
+  end
+
+  private
+
+  def validate( x, y , face )
+     @grid.inside?( x, y ) && ! Direction[face].nil?
   end
 
 end

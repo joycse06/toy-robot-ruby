@@ -14,7 +14,7 @@ class Direction
   @SOUTH = Direction.new 'SOUTH'
   @WEST  = Direction.new 'WEST'
 
-  @CLOCKWISE_DIRECTIONS = [ @NORTH, @EAST, @SOUTH, @WEST ];
+  @CLOCKWISE_DIRECTIONS = [ @NORTH, @EAST, @SOUTH, @WEST ]
 
   def self.NORTH
     @NORTH

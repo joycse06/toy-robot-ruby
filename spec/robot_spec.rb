@@ -15,11 +15,11 @@ describe Robot do
         robot.place( 1, 1, 'SOUTH' )
       end
       it 'reports position as 1,1,SOUTH' do
-        expect(robot.report).to be '1,1,SOUTH'
+        expect(robot.report).to eq('1,1,SOUTH')
       end
     end
 
-    context 'invalid position placement' do
+    context 'invalid placement' do
       before do
         robot.place( 5, -1, 'SOUTH' )
       end
@@ -27,7 +27,10 @@ describe Robot do
       it 'ignores reporting' do
         expect(robot.report).to be_nil
       end
-
     end
+  end
+
+  describe 'turning left' do
+
   end
 end
