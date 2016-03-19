@@ -5,6 +5,6 @@ class Grid
   end
 
   def inside? x, y
-
+    (0..@MAX_X) === x && (0..@MAX_Y) === y
   end
 end
