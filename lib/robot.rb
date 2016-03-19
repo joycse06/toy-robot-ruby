@@ -16,12 +16,12 @@ class Robot
     y = (y.to_i)
     face = face.upcase
     if ( validate( x, y, face ) )
-      @xPos, @yPos, @face = x, y, face
+      @xPos, @yPos, @face = x, y, Direction[face]
     end
   end
 
   def left
-
+    @face = Direction.left @face
   end
 
   def right
