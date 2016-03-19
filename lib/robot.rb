@@ -25,7 +25,7 @@ class Robot
   end
 
   def right
-
+    @face = Direction.right @face
   end
 
   def move
