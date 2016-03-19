@@ -75,4 +75,50 @@ describe Robot do
       end
     end
   end
+
+  describe 'turning right' do
+    context 'turning right from EAST' do
+      before do
+        robot.place( 1, 1, 'EAST' )
+        robot.right
+      end
+
+      it 'faces SOUTH' do
+        expect(robot.face).to be Direction.SOUTH
+      end
+    end
+
+    context 'turning right from SOUTH' do
+      before do
+        robot.place( 1, 1, 'SOUTH' )
+        robot.right
+      end
+
+      it 'faces WEST' do
+        expect(robot.face).to be Direction.WEST
+      end
+    end
+
+    context 'turning right from WEST' do
+      before do
+        robot.place( 1, 1, 'WEST' )
+        robot.right
+      end
+
+      it 'faces NORTH' do
+        expect(robot.face).to be Direction.NORTH
+      end
+    end
+
+    context 'turning right from NORTH' do
+      before do
+        robot.place( 1, 1, 'NORTH' )
+        robot.right
+      end
+
+      it 'faces EAST' do
+        expect(robot.face).to be Direction.EAST
+      end
+    end
+  end
 end
