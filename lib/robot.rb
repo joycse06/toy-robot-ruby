@@ -30,8 +30,13 @@ class Robot
 
   def move
     moveVector = @moveTranslationVector[@face.to_s]
-    @xPos += moveVector.first
-    @yPos += moveVector.last
+    newX = @xPos + moveVector.first
+    newY = @yPos + moveVector.last
+
+    if @grid.inside?( newX, newY )
+      @xPos = newX
+      @yPos = newY
+    end
   end
 
   def report
