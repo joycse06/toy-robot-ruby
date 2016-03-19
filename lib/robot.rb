@@ -20,6 +20,18 @@ class Robot
     end
   end
 
+  def left
+
+  end
+
+  def right
+
+  end
+
+  def move
+
+  end
+
   def report
     "#{@xPos},#{@yPos},#{@face.to_s}" if placed?
   end
