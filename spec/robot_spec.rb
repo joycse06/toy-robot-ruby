@@ -121,4 +121,52 @@ describe Robot do
       end
     end
   end
+
+  describe 'movements' do
+    describe 'valid movements are possible' do
+      context 'moving with EAST face' do
+        before do
+          robot.place(1,1, 'EAST')
+          robot.move
+        end
+        it 'reports position 2,1,EAST' do
+          expect(robot.report).to eq('2,1,EAST')
+        end
+      end
+
+      context 'moving with SOUTH face' do
+        before do
+          robot.place(1,1, 'SOUTH')
+          robot.move
+        end
+        it 'reports position 1,0,SOUTH' do
+          expect(robot.report).to eq('1,0,EAST')
+        end
+      end
+
+      context 'moving with WEST face' do
+        before do
+          robot.place(1,1, 'WEST')
+          robot.move
+        end
+        it 'reports position 0,1,WEST' do
+          expect(robot.report).to eq('0,1,WEST')
+        end
+      end
+
+      context 'moving with NORTH face' do
+        before do
+          robot.place(1,1, 'NORTH')
+          robot.move
+        end
+        it 'reports position 1,2,NORTH' do
+          expect(robot.report).to eq('1,2,NORTH')
+        end
+      end
+    end
+
+    describe 'invalid movements are ignored' do
+
+    end
+  end
 end
