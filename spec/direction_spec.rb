@@ -4,7 +4,7 @@ describe 'Direction' do
 
   describe 'find directions' do
     it 'finds NORTH direction' do
-       expect( Direction['NORTH'] ).to be Diretion.NORTH
+       expect( Direction['NORTH'] ).to be Direction.NORTH
     end
     it 'finds SOUTH direction' do
       expect( Direction['SOUTH'] ).to be Direction.SOUTH
