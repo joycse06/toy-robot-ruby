@@ -166,7 +166,42 @@ describe Robot do
     end
 
     describe 'invalid movements are ignored' do
-
+      context 'prevents falling off the edge with EAST face' do
+        before do
+          robot.place( 3, 0,'EAST' )
+          robot.move
+        end
+        it 'reports position 3,0,EAST' do
+          expect(robot.report).to eq('3,0,EAST')
+        end
+      end
+      context 'prevents falling off the edge with SOUTH face' do
+        before do
+          robot.place( 0, 0,'SOUTH' )
+          robot.move
+        end
+        it 'reports position 0,0,EAST' do
+          expect(robot.report).to eq('0,0,SOUTH')
+        end
+      end
+      context 'prevents falling off the edge with WEST face' do
+        before do
+          robot.place( 0, 0,'WEST' )
+          robot.move
+        end
+        it 'reports position 0,0,WEST' do
+          expect(robot.report).to eq('0,0,WEST')
+        end
+      end
+      context 'prevents falling off the edge with NORTH face' do
+        before do
+          robot.place( 0, 3,'NORTH' )
+          robot.move
+        end
+        it 'reports position 0,3,NORTH' do
+          expect(robot.report).to eq('0,3,NORTH')
+        end
+      end
     end
   end
 end
