@@ -29,7 +29,9 @@ class Robot
   end
 
   def move
-
+    moveVector = @moveTranslationVector[@face.to_s]
+    @xPos += moveVector.first
+    @yPos += moveVector.last
   end
 
   def report

@@ -140,7 +140,7 @@ describe Robot do
           robot.move
         end
         it 'reports position 1,0,SOUTH' do
-          expect(robot.report).to eq('1,0,EAST')
+          expect(robot.report).to eq('1,0,SOUTH')
         end
       end
 
