@@ -72,7 +72,7 @@ describe 'Simulator' do
   describe 'handles PLACE command with invalid number of arguments' do
     it 'ignores PLACE with invalid number of arguments' do
       commands = ['PLACE 1,2']
-      expect(simulator.execute(commands[0])).to eq('Invalid arguments')
+      expect(simulator.execute(commands[0])).to eq('Invalid Arguments')
     end
   end
 
@@ -81,4 +81,6 @@ describe 'Simulator' do
       expect(simulator.execute('INVALID')).to eq('Invalid Command')
     end
   end
+
+
 end

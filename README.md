@@ -20,16 +20,16 @@ The application was developed on Mac OSX 10.9.5 but it should run on any *nix en
 Make sure you have [Git](https://git-scm.com/) and [Ruby 2.3.0](https://www.ruby-lang.org/en/downloads/) installed, then run the following commands from your favorite shell
 
 ```
-git clone git@github.com:joycse06/toy-robot-ruby.git
-cd toy-robot-ruby
-gem install bundler
-bundle install
+$ git clone git@github.com:joycse06/toy-robot-ruby.git
+$ cd toy-robot-ruby
+$ gem install bundler
+$ bundle install
 ```
 ## Operating Instructions
 After you have all the depencecy installed using ```bundle install```, you can run the following from your favorite shell from within the project directory
 
 ```
-./lib/toy_robot_simulation.rb
+$ ./lib/toy_robot_simulation.rb
 
 ```
 which will start the simulator and wait for commands.
@@ -37,10 +37,14 @@ which will start the simulator and wait for commands.
 The full test suite can be run using the following command
 
 ```
-rspec spec/
+$ rspec spec/
 
 ```
-And it will also generate the Code Coverage data using the [**SimpleCov**](http://github.com/colszowka/simplecov) gem which can be seen by opening the ```[PROJECT_ROOT]/coverage/index.html``` file into a browser.
+And it will also generate the Code Coverage data using the [**SimpleCov**](http://github.com/colszowka/simplecov) gem which can be seen by opening the ```[PROJECT_ROOT]/coverage/index.html``` file into a browser or you can run the following command from terminal.
+
+```
+$ open coverage/index.html
+```
 
 ## Usage
 The simulator reads instructions from STDIN, executing valid commands one at a time until EOF is entered. On Unix like systems EOF can be entered using the C-d ( Ctrl + d ) combination.
@@ -150,7 +154,8 @@ But to keep the simulator simple and with the short list of commands it has been
 
 ## Contributing
 Contributions are wecome and can be done by sending pull requests.
-Please create ```issues``` for discussion or bug reports.
+
+Please create [issues](https://github.com/joycse06/toy-robot-ruby/issues) for discussion or bug reports.
 
 ## License
 Toy Robot Simulator is released under the [MIT License](http://www.opensource.org/licenses/MIT)
