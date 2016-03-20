@@ -151,6 +151,7 @@ But to keep the simulator simple and with the short list of commands it has been
 * Allow for using other ```INPUT``` and ```OUTPUT``` sources 
 * Adding ```rake``` tasks for running the spec and running the simulator easily
 * Allow passing arguments into the simulator script from command line, like ```board size``` , ```input and output``` sources
+* Extract the x,y positions and direction into a ```Position``` class for better encapsulation of data and lesser responsibility for the ```Robot``` class
 
 ## Contributing
 Contributions are wecome and can be done by sending pull requests.
