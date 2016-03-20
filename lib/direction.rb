@@ -21,6 +21,7 @@ class Direction
   end
 
   def self.[](direction)
+    return nil unless ['NORTH', 'EAST', 'SOUTH', 'WEST'].include?(direction)
     self.instance_variable_get("@#{direction}") if self.instance_variable_defined?("@#{direction}")
   end
 

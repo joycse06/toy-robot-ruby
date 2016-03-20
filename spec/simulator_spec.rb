@@ -91,5 +91,16 @@ describe 'Simulator' do
 
   end
 
+  describe 'handles invalid direction EDGE cases' do
+    it 'ignores FixNum direction' do
+      commands = ['PLACE 1,1,2', 'PLACE -5,,5']
+      commands.each { |command| simulator.execute(command) }
+      expect(simulator.execute('REPORT')).to eq('Ignoring command until robot is placed.')
+    end
+
+  end
+
+
+
 
 end
