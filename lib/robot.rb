@@ -21,14 +21,17 @@ class Robot
   end
 
   def left
+    return 'Ignoring command until robot is placed.' unless placed?
     @face = Direction.left @face
   end
 
   def right
+    return 'Ignoring command until robot is placed.' unless placed?
     @face = Direction.right @face
   end
 
   def move
+    return 'Ignoring command until robot is placed.' unless placed?
     moveVector = @moveTranslationVector[@face.to_s]
     newX = @xPos + moveVector.first
     newY = @yPos + moveVector.last
@@ -40,7 +43,8 @@ class Robot
   end
 
   def report
-    "#{@xPos},#{@yPos},#{@face.to_s}" if placed?
+    return 'Ignoring command until robot is placed.' unless placed?
+    "#{@xPos},#{@yPos},#{@face.to_s}"
   end
 
   def placed?
