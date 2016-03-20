@@ -55,7 +55,7 @@ describe 'Simulator' do
     end
   end
 
-  describe 'can handle multiple PLACE commands' do
+  describe 'handle multiple PLACE commands' do
     it 'can handle multiple valid PLACE commands' do
       commands = ['PLACE 1,2,SOUTH', 'PLACE 1,4,EAST', 'PLACE 2,2,WEST', 'PLACE 4,4,NORTH']
       commands.each { |command| simulator.execute(command) }
@@ -66,6 +66,19 @@ describe 'Simulator' do
       commands = ['PLACE 1,2,INVALID', 'PLACE -5,4,EAST', 'PLACE 2,-7,WEST', 'PLACE 4,4,NORTH']
       commands.each { |command| simulator.execute(command) }
       expect(simulator.execute('REPORT')).to eq('4,4,NORTH')
+    end
+  end
+
+  describe 'handles PLACE command with invalid number of arguments' do
+    it 'ignores PLACE with invalid number of arguments' do
+      commands = ['PLACE 1,2']
+      expect(simulator.execute(commands[0])).to eq('Invalid arguments')
+    end
+  end
+
+  describe 'handles invalid commands' do
+    it 'ignores invalid commands' do
+      expect(simulator.execute('INVALID')).to eq('Invalid Command')
     end
   end
 end

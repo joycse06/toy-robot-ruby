@@ -12,13 +12,13 @@ class Simulator
     # further split the args if command has args, covers PLACE command
     args = args.split(/\s*,\s*/) if args
 
-    return 'Invalid command' unless Robot.public_method_defined?(op)
+    return 'Invalid Command' unless Robot.public_method_defined?(op)
     begin
-      output = @robot.send(op, *args)
-      return output if output
+      result= @robot.send(op, *args)
+      return result if result
     rescue
       return 'Invalid arguments'
     end
   end
-  
+
 end
