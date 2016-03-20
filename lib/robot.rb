@@ -18,16 +18,19 @@ class Robot
     if ( valid?( x, y, face ) )
       @xPos, @yPos, @face = x, y, Direction[face]
     end
+    nil
   end
 
   def left
     return 'Ignoring command until robot is placed.' unless placed?
     @face = Direction.left @face
+    nil
   end
 
   def right
     return 'Ignoring command until robot is placed.' unless placed?
     @face = Direction.right @face
+    nil
   end
 
   def move
@@ -40,6 +43,7 @@ class Robot
       @xPos = newX
       @yPos = newY
     end
+    nil
   end
 
   def report
