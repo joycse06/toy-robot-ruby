@@ -16,20 +16,8 @@ class Direction
 
   @CLOCKWISE_DIRECTIONS = [ @NORTH, @EAST, @SOUTH, @WEST ]
 
-  def self.NORTH
-    @NORTH
-  end
-
-  def self.EAST
-    @EAST
-  end
-
-  def self.SOUTH
-    @SOUTH
-  end
-
-  def self.WEST
-    @WEST
+  class << self
+    attr_reader :NORTH, :EAST, :SOUTH, :WEST
   end
 
   def self.[](direction)
