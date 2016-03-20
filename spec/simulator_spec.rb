@@ -23,13 +23,13 @@ describe 'Simulator' do
     it 'can place and rotate robot to LEFT' do
       commands = ['PLACE 1,2,SOUTH', 'LEFT']
       commands.each { |command| simulator.execute(command) }
-      expect(simulator.execute('REPORT')).to eq('1,1,EAST')
+      expect(simulator.execute('REPORT')).to eq('1,2,EAST')
     end
 
     it 'can place and rotate robot to RIGHT' do
       commands = ['PLACE 1,2,SOUTH', 'RIGHT']
       commands.each { |command| simulator.execute(command) }
-      expect(simulator.execute('REPORT')).to eq('1,1,WEST')
+      expect(simulator.execute('REPORT')).to eq('1,2,WEST')
     end
   end
 
