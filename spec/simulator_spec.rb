@@ -34,13 +34,13 @@ describe 'Simulator' do
   end
 
   describe 'rotating and moving' do
-    it 'can place and rotate robot to LEFT' do
+    it 'can place and rotate robot to LEFT then MOVE' do
       commands = ['PLACE 1,2,SOUTH', 'MOVE', 'MOVE', 'LEFT', 'MOVE']
       commands.each { |command| simulator.execute(command) }
       expect(simulator.execute('REPORT')).to eq('2,0,EAST')
     end
 
-    it 'can place and rotate robot to RIGHT' do
+    it 'can place and rotate robot to RIGHT the MOVE' do
       commands = ['PLACE 1,2,SOUTH', 'MOVE', 'MOVE', 'RIGHT', 'MOVE']
       commands.each { |command| simulator.execute(command) }
       expect(simulator.execute('REPORT')).to eq('0,0,WEST')
@@ -48,7 +48,7 @@ describe 'Simulator' do
   end
 
   describe 'ignores commands before a place' do
-    it 'ignores all command before robot is PLACED' do
+    it 'ignores all commands before robot is PLACED' do
       commands = ['MOVE', 'MOVE', 'LEFT', 'MOVE']
       commands.each { |command| simulator.execute(command) }
       expect(simulator.execute('REPORT')).to eq('Ignoring command until robot is placed.')
