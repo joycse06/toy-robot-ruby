@@ -22,7 +22,7 @@ class Simulator
       result = @robot.send( op, *args )
       return result if result
     rescue ArgumentError
-      return 'Invalid arguments'
+      return 'Invalid Arguments'
     end
   end
 
