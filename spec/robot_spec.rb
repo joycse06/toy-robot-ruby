@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Robot do
+describe 'Robot' do
   let(:robot) { Robot.new( Grid.new( 4, 4 ) ) }
 
   describe 'creation' do
