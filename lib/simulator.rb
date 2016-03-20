@@ -21,4 +21,13 @@ class Simulator
     end
   end
 
+  def startSimulation( input = STDIN )
+    command = input.gets
+    while command
+      result = execute(command)
+      @output.puts result if result
+      command = input.gets
+    end
+  end
+
 end
