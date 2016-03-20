@@ -82,5 +82,14 @@ describe 'Simulator' do
     end
   end
 
+  describe 'handles invalid positions EDGE cases' do
+    it 'ignores invalid co-ordinates' do
+      commands = ['PLACE a,b,', 'PLACE -5,,HELLO']
+      commands.each { |command| simulator.execute(command) }
+      expect(simulator.execute('REPORT')).to eq('Ignoring command until robot is placed.')
+    end
+
+  end
+
 
 end

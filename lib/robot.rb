@@ -12,9 +12,12 @@ class Robot
   end
 
   def place( x, y, face )
-    x = (x.to_i)
-    y = (y.to_i)
-    face = face.upcase
+    x = (x.to_i if /\d+/.match(x.to_s))
+    y = (y.to_i if /\d+/.match(x.to_s))
+    face = face.strip.upcase
+
+    return nil if x.nil? or y.nil? or face.empty?
+
     if ( valid?( x, y, face ) )
       @xPos, @yPos, @face = x, y, Direction[face]
     end
