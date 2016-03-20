@@ -204,4 +204,17 @@ describe Robot do
       end
     end
   end
+
+  describe 'commands are ignored until placed' do
+      it 'ignores LEFT command' do
+        expect(robot.left).to eq('Ignoring command until robot is placed.')
+      end
+      it 'ignores RIGHT command' do
+        expect(robot.right).to eq('Ignoring command until robot is placed.')
+      end
+      it 'ignores REPORT command' do
+        expect(robot.report).to eq('Ignoring command until robot is placed.')
+
+      end
+  end
 end
