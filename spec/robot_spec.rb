@@ -25,7 +25,7 @@ describe Robot do
       end
 
       it 'ignores reporting' do
-        expect(robot.report).to be_nil
+        expect(robot.report).to eq('Ignoring command until robot is placed.')
       end
     end
   end
