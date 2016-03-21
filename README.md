@@ -116,7 +116,7 @@ Output is printed into ```STDOUT```. The following texts are printed when invali
 
 After robot is placed into a valid position, entering the ```REPORT``` command prints the position in the following format
 
-```1,1,NORTH```
+``` 1,1,NORTH ```
 
 ### Design
 
