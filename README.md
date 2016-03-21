@@ -154,7 +154,7 @@ After robot is placed into a valid position, entering the ```REPORT``` command p
 	
 5. **lib/robot.rb**
 
-	The ```Robot``` class leverages the ```Grid``` and ```Direction``` class and does all the heavy-lifting. It can validate if any point is valid using the ```Grid``` class, can turn left or right using the ```Direction``` class.
+	The ```Robot``` class leverages the ```Grid``` and ```Direction``` class and does all the heavy-lifting. The simulator class instantiates the ```Grid``` and uses ```Dependency Injection``` to pass it to the ```Robot``` Class. It can validate if any point is valid using the ```Grid``` class, can turn left or right using the ```Direction``` class.
 	It has a ```moveTranslationVector```( which holds a vector ) which holds the ```vector``` which it uses for the ```move``` command to move the robot forward.
 				
 
