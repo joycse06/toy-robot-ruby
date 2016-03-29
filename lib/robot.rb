@@ -1,6 +1,6 @@
 class Robot
-  attr_accessor :xPos, :yPos, :face, :grid, :moveTranslationVector
-
+  attr_accessor :face
+  
   def initialize( grid )
     @grid     = grid
     @moveTranslationVector = {
